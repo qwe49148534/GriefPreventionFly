@@ -1,0 +1,12 @@
+name: GriefPreventionFly
+version: ${project.version}
+main: main.GriefPreventionFly
+api-version: 1.17
+permissions:
+  GriefPreventionFly.use:
+    description: ""
+    default: true
+
+  GriefPreventionFly.admin:
+    description: ""
+    default: op
