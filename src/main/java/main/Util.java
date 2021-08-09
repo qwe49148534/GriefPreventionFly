@@ -1,5 +1,6 @@
 package main;
 
+import org.bukkit.Color;
 import org.bukkit.Location;
 import org.bukkit.Material;
 import org.bukkit.Particle;
@@ -9,7 +10,6 @@ import org.jetbrains.annotations.NotNull;
 
 /**
  * 有關對於插件可用的幫助方法
- * @author 蔡秉岑
  */
 public final class Util {
 
@@ -32,14 +32,15 @@ public final class Util {
             // 如果方塊不是空氣，代表是安全位置
             if (!blockAt.getType().equals(Material.AIR)) {
                 // 將玩家傳送至此
-                player.teleport(new Location(player.getWorld(), location.getBlockX(), y + 0.5F , location.getBlockZ()));
+                player.teleport(new Location(player.getWorld(), location.getBlockX(), y + 1.0D , location.getBlockZ()));
 
                 // 產生特效
-                player.spawnParticle(Particle.TOTEM , player.getLocation() , 10);
+                player.spawnParticle(Particle.REDSTONE, location.add(player.getLocation().getBlockX() + 0.5D , player.getLocation().getBlockY() + 0.5D , player.getLocation().getBlockZ() + 0.5D), 10, new Particle.DustTransition(Color.RED, Color.AQUA, 2f));
                 return; // 返回
             }
 
         }
+
     }
 
 }

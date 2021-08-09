@@ -1,0 +1,2 @@
+JoinEventMessage: "§7<§6領地§7> §f你進入具有 §a[§9操作物使用權限§a]§f 的領地"
+LeaveEventMessage: "§7<§6領地§7> §f你不在具有 §a[§9操作物使用權限§a]§f 的領地。§c 取消你的飛行"

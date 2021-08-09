@@ -21,20 +21,24 @@ public class MoveEvent implements Listener {
             );
 
             if (claimAt != null && claimAt.hasExplicitPermission(player , ClaimPermission.Access)) {
-                if (player.getAllowFlight())
+
+                if (player.isFlying())
                     return;
 
                 player.setAllowFlight(true);
                 player.sendMessage("§7<§6領地§7> §f你進入具有 §a[§9操作物使用權限§a]§f 的領地");
-                player.sendMessage("§a 雙擊你的空白鍵可進行飛行");
+
 
             } else {
-                if (player.getAllowFlight()) {
+                if (player.isFlying()) {
+
                     Util.tpPlayerToSafeLocation(player);
                     player.setAllowFlight(false);
+
                     player.sendMessage("§7<§6領地§7> §f你不在具有 §a[§9操作物使用權限§a]§f 的領地。§c 取消你的飛行");
                 }
             }
         }
     }
+
 }
