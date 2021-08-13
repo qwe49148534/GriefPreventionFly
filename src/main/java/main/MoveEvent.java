@@ -7,6 +7,7 @@ import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
 import org.bukkit.event.player.PlayerMoveEvent;
 
+
 public class MoveEvent implements Listener {
 
     @EventHandler
@@ -22,23 +23,27 @@ public class MoveEvent implements Listener {
 
             if (claimAt != null && claimAt.hasExplicitPermission(player , ClaimPermission.Access)) {
 
-                if (player.isFlying())
-                    return;
+                if (!player.getAllowFlight()) {
+                    player.setAllowFlight(true);
+                    player.sendMessage(GriefPreventionFly.getPlugin().getPluginConfig().getJoinMessage());
 
-                player.setAllowFlight(true);
-                player.sendMessage("§7<§6領地§7> §f你進入具有 §a[§9操作物使用權限§a]§f 的領地");
-
+//                    GriefPreventionFly.getPlugin().getPluginConfig().set("hello", "world");
+                }
 
             } else {
                 if (player.isFlying()) {
-
                     Util.tpPlayerToSafeLocation(player);
-                    player.setAllowFlight(false);
 
-                    player.sendMessage("§7<§6領地§7> §f你不在具有 §a[§9操作物使用權限§a]§f 的領地。§c 取消你的飛行");
+                    player.setAllowFlight(false);
+                    player.sendMessage(GriefPreventionFly.getPlugin().getPluginConfig().getLeaveMessage());
+
+//                    GriefPreventionFly.getPlugin().getPluginConfig().save();
                 }
             }
         }
     }
+
+
+
 
 }
