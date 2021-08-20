@@ -25,9 +25,8 @@ public class MoveEvent implements Listener {
 
                 if (!player.getAllowFlight()) {
                     player.setAllowFlight(true);
-                    player.sendMessage(GriefPreventionFly.getPlugin().getPluginConfig().getJoinMessage());
-
-//                    GriefPreventionFly.getPlugin().getPluginConfig().set("hello", "world");
+                    player.sendMessage(GriefPreventionFly.translateAlternateColorCodes(
+                            GriefPreventionFly.getPlugin().getPluginConfig().getJoinMessage()));
                 }
 
             } else {
@@ -35,9 +34,8 @@ public class MoveEvent implements Listener {
                     Util.tpPlayerToSafeLocation(player);
 
                     player.setAllowFlight(false);
-                    player.sendMessage(GriefPreventionFly.getPlugin().getPluginConfig().getLeaveMessage());
-
-//                    GriefPreventionFly.getPlugin().getPluginConfig().save();
+                    player.sendMessage(GriefPreventionFly.translateAlternateColorCodes(
+                            GriefPreventionFly.getPlugin().getPluginConfig().getLeaveMessage()));
                 }
             }
         }

@@ -1,2 +1,7 @@
-JoinEventMessage: "§7<§6領地§7> §f你進入具有 §a[§9操作物使用權限§a]§f 的領地"
-LeaveEventMessage: "§7<§6領地§7> §f你不在具有 §a[§9操作物使用權限§a]§f 的領地。§c 取消你的飛行"
+# GriefPreventionFly author YouKlike
+# author Discord: 餅乾#2526
+
+JoinEventMessage: "&7<&6領地&7> &7你進入具有 &a[&9操作物使用權限&a]&7 的領地"
+LeaveEventMessage: "&7<&6領地&7> &7你不在具有 &a[&9操作物使用權限&a]&7 的領地。&c 取消你的飛行"
+ReloadMessage: "&7<&6領地&7> &7插件已重新讀取"
+NoPermissionMessage: "&7<&6領地&7> &c你沒有權限使用這個指令"

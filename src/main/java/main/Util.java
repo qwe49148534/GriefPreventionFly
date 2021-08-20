@@ -32,7 +32,7 @@ public final class Util {
             // 如果方塊不是空氣，代表是安全位置
             if (!blockAt.getType().equals(Material.AIR)) {
                 // 將玩家傳送至此
-                player.teleport(new Location(player.getWorld(), location.getBlockX(), y + 1.0D , location.getBlockZ(), location.getYaw(), location.getPitch()));
+                player.teleport(new Location(player.getWorld(), location.getBlockX(), y + 2.0D , location.getBlockZ(), location.getYaw(), location.getPitch()));
 
                 // 產生特效
                 player.spawnParticle(Particle.REDSTONE, location.add(player.getLocation().getBlockX() + 0.5D , player.getLocation().getBlockY() + 0.5D , player.getLocation().getBlockZ() + 0.5D), 10, new Particle.DustTransition(Color.RED, Color.AQUA, 2f));

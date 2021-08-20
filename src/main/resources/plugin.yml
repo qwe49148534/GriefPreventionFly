@@ -2,6 +2,9 @@ name: GriefPreventionFly
 version: ${project.version}
 main: main.GriefPreventionFly
 api-version: 1.17
+commands:
+  gr:
+    description: ""
 permissions:
   GriefPreventionFly.use:
     description: ""

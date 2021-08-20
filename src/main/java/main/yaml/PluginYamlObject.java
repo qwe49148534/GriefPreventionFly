@@ -8,22 +8,25 @@ import java.io.File;
 import java.io.IOException;
 
 /**
- * 代表檔案處禮物建
+ * 代表檔案處理物件
  */
 public class PluginYamlObject {
 
+    // 建立一個名為file的檔案
     protected final File file;
 
+    //建立一個名為configuration的記憶體檔案
     protected YamlConfiguration configuration;
 
-    public PluginYamlObject(final @NotNull String fileName) {
+    public PluginYamlObject(final @NotNull String filename) {
         final GriefPreventionFly plugin = GriefPreventionFly.getPlugin();
 
-        this.file = new File(plugin.getDataFolder(), fileName);
+        this.file = new File(plugin.getDataFolder(), filename);
         if (!this.exists())
-            plugin.saveResource(fileName, false);
+            plugin.saveResource(filename , false);
 
         this.configuration = YamlConfiguration.loadConfiguration(this.file);
+
     }
 
     /**
@@ -60,5 +63,6 @@ public class PluginYamlObject {
     public final YamlConfiguration getConfiguration() {
         return configuration;
     }
+
 
 }

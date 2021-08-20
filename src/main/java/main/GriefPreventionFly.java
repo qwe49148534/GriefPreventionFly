@@ -2,8 +2,11 @@ package main;
 
 import main.yaml.PluginConfig;
 import me.ryanhamshire.GriefPrevention.GriefPrevention;
+import org.bukkit.ChatColor;
 import org.bukkit.plugin.java.JavaPlugin;
 import org.jetbrains.annotations.NotNull;
+
+import java.util.Objects;
 
 public final class GriefPreventionFly extends JavaPlugin {
 
@@ -21,6 +24,13 @@ public final class GriefPreventionFly extends JavaPlugin {
 
         // 註冊事件
         getServer().getPluginManager().registerEvents(new MoveEvent(),this);
+
+        // 註冊指令
+        Objects.requireNonNull(this.getCommand("gr")).setExecutor(new Command());
+    }
+
+    public static String translateAlternateColorCodes(final @NotNull String msg) {
+        return ChatColor.translateAlternateColorCodes('&' , msg);
     }
 
     @NotNull
